@@ -25,7 +25,7 @@ class PagePool {
 
       //TQ: numa_id_ is treated as core_id in malloc_contiguous
       // compute the an lcore that correspond to the given numa_id
-      uint8_t lcore = (::mica::util::lcore.lcore_count()-1) / ::mica::util::lcore.numa_count();
+      size_t lcore = (::mica::util::lcore.lcore_count()-1) / ::mica::util::lcore.numa_count();
       lcore += numa_id;
 //      printf("computed lcore=%d\n",lcore);
     pages_ =
